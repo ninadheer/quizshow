@@ -13,8 +13,11 @@
     </div>
 	<div>{{questions}}</div>
 	<div ng-controller="QuizController">
-	  <div ng-repeat="question in questions">
-		<label >{{question}}</label>
+	  <div ng-repeat="question in questions"> <label> {{question.question}}
+	  <div ng-repeat="answer in question.answers">
+	  
+		<a href="#">{{answer}}</a>
+	  </div>
 		<br>
 	  </div>
 	</div>
