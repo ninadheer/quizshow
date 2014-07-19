@@ -3,9 +3,18 @@
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.15/angular.min.js"></script>
 	<script src="quizshow.js"></script>
+	<link rel="stylesheet"
+		  href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet"
+		  href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
   </head>
   <body>
-    <div>
+    <div class="jumbotron">
       <label>Name:</label>
       <input type="text" ng-model="yourName" placeholder="Enter a name here">
       <hr>
@@ -13,12 +22,15 @@
     </div>
 	<div>{{questions}}</div>
 	<div ng-controller="QuizController">
-	  <div ng-repeat="question in questions"> <label> {{question.question}}
-	  <div ng-repeat="answer in question.answers">
-	  
-		<a href="#">{{answer}}</a>
-	  </div>
-		<br>
+	  <div class="panel panel-default" ng-repeat="question in questions">
+		<h2 class="panel-heading"> {{question.question}}</h2>
+		<div class="panel-body">
+		  <a ng-repeat="answer in question.answers"
+			 type="button" class="btn btn-default"
+			 href="#">
+			{{answer}}
+		  </a>
+		</div>
 	  </div>
 	</div>
   </body>
