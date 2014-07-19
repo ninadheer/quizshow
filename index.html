@@ -11,8 +11,12 @@
       <hr>
       <h1>Hello {{yourName}}!</h1>
     </div>
+	<div>{{questions}}</div>
 	<div ng-controller="QuizController">
-	  <label>{{question1}}</label>
+	  <div ng-repeat="question in questions">
+		<label >{{question}}</label>
+		<br>
+	  </div>
 	</div>
   </body>
 </html>
